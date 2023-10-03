@@ -10,16 +10,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     setPathUrlStrategy();
-    await Firebase.initializeApp(
-      options: FirebaseOptions(
-          apiKey: "AIzaSyDTqxkfEwFAAqDzmRlMJ6BT-YVDdnsu6yw",
-          authDomain: "budget-app-3eb54.firebaseapp.com",
-          projectId: "budget-app-3eb54",
-          storageBucket: "budget-app-3eb54.appspot.com",
-          messagingSenderId: "582942096598",
-          appId: "1:582942096598:web:fe5d329e7037106a821d77",
-          measurementId: "G-Q2LS71J1N6"),
-    );
+//     await Firebase.initializeApp(
+//       options: FirebaseOptions(
+// Insert Firebase web details and add your own google services files.
+//     );
   } else {
     await Firebase.initializeApp();
   }
