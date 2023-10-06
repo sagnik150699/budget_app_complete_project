@@ -13,14 +13,14 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  logger: ^1.1.0
-  cloud_firestore: ^4.0.2
-  firebase_auth: ^4.0.2
-  flutter_hooks: ^0.18.0
-  hooks_riverpod: ^2.0.0-dev.7
-  google_fonts: ^5.1.0
-  google_sign_in: ^6.1.4
-  sign_button: ^2.0.2
+  logger: ^2.0.2+1
+  cloud_firestore:
+  firebase_auth:
+  flutter_hooks:
+  hooks_riverpod:
+  google_fonts:
+  google_sign_in:
+  sign_button:
   url_strategy: ^0.2.0
   url_launcher:
   flutter_svg:

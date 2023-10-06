@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'firebase_options.dart';
 import 'responsive_handler.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     setPathUrlStrategy();
-//     await Firebase.initializeApp(
-//       options: FirebaseOptions(
-// Insert Firebase web details and add your own google services files.
-//     );
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   } else {
-    await Firebase.initializeApp();
+    await Firebase.initializeApp( options: DefaultFirebaseOptions.currentPlatform,);
   }
 
   runApp(
