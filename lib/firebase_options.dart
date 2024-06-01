@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -55,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo',
-    appId: '1:357935783557:android:88a12c5a56402d247ed3ec',
+    appId: '1:357935783557:android:06a46991b4c311247ed3ec',
     messagingSenderId: '357935783557',
     projectId: 'budget-app-89e2f',
     storageBucket: 'budget-app-89e2f.appspot.com',
@@ -63,21 +66,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDMMHJsNTy0Xqi-dDY7bHZ9YXRUPO9ccCI',
-    appId: '1:357935783557:ios:7782fa55b11ca4837ed3ec',
+    appId: '1:357935783557:ios:79d9361ba45c8cc47ed3ec',
     messagingSenderId: '357935783557',
     projectId: 'budget-app-89e2f',
     storageBucket: 'budget-app-89e2f.appspot.com',
-    iosClientId: '357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com',
-    iosBundleId: 'com.paulinaknop.budgetAppStarting',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDMMHJsNTy0Xqi-dDY7bHZ9YXRUPO9ccCI',
-    appId: '1:357935783557:ios:7782fa55b11ca4837ed3ec',
-    messagingSenderId: '357935783557',
-    projectId: 'budget-app-89e2f',
-    storageBucket: 'budget-app-89e2f.appspot.com',
-    iosClientId: '357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com',
-    iosBundleId: 'com.paulinaknop.budgetAppStarting',
+    androidClientId: '357935783557-0sv5mmkmf8fe9ntjbta5ubmihj4kgp51.apps.googleusercontent.com',
+    iosClientId: '357935783557-u9mgds3stqeg2d6avih6he0mq0a8t1ik.apps.googleusercontent.com',
+    iosBundleId: 'com.codingliquids.budgetAppCompleteProject',
   );
 }

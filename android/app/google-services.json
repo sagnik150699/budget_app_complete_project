@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:357935783557:android:bb3a47cf604a791b7ed3ec",
+        "mobilesdk_app_id": "1:357935783557:android:06a46991b4c311247ed3ec",
         "android_client_info": {
-          "package_name": "com.codingliquids.budget_app_starting"
+          "package_name": "com.c"
         }
       },
       "oauth_client": [
@@ -31,10 +31,98 @@
               "client_type": 3
             },
             {
-              "client_id": "357935783557-oh15arfgp9ls3bp7ufv0m954r1igevdt.apps.googleusercontent.com",
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.codingliquids.budgetAppStarting"
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357935783557:android:bb3a47cf604a791b7ed3ec",
+        "android_client_info": {
+          "package_name": "com.codingliquids.budget_app_starting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357935783557-et20tqc37m95cna0dpmniaoaramqvnqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingliquids.budget_app_starting",
+            "certificate_hash": "8a0c901f36b5c96e17c2bb859aed9f78b6e92598"
+          }
+        },
+        {
+          "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357935783557:android:d22ce2be1d8648607ed3ec",
+        "android_client_info": {
+          "package_name": "com.codingliquids.money_control"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357935783557-npvoeptdg90ljsq9olbgada56nrf5qpo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingliquids.money_control",
+            "certificate_hash": "8a0c901f36b5c96e17c2bb859aed9f78b6e92598"
+          }
+        },
+        {
+          "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
               }
             }
           ]
@@ -50,6 +138,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "357935783557-0sv5mmkmf8fe9ntjbta5ubmihj4kgp51.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paulinaknop.budget_app_starting",
+            "certificate_hash": "8a0c901f36b5c96e17c2bb859aed9f78b6e92598"
+          }
+        },
+        {
           "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -67,10 +163,10 @@
               "client_type": 3
             },
             {
-              "client_id": "357935783557-oh15arfgp9ls3bp7ufv0m954r1igevdt.apps.googleusercontent.com",
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.codingliquids.budgetAppStarting"
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
               }
             }
           ]

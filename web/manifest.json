@@ -1,6 +1,6 @@
 {
-    "name": "budget_app_starting",
-    "short_name": "budget_app_starting",
+    "name": "budget_app_complete_project",
+    "short_name": "budget_app_complete_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
