@@ -322,7 +322,7 @@ class RegisterAndLogin extends HookConsumerWidget {
       children: [
         SizedBox(
           height: 50.0,
-          width: 150.0,
+          width: 140.0,
           child: MaterialButton(
             child: OpenSans(
               text: "Register",
