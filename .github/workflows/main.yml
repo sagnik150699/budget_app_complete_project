@@ -35,8 +35,8 @@ jobs:
         run: ${{ github.workspace }}\_flutter\bin\flutter.bat pub get
 
       # Step 6: Build Windows Executable
-      - name: Build Windows Executable
-        run: ${{ github.workspace }}\_flutter\bin\flutter.bat build windows
+#      - name: Build Windows Executable
+#        run: ${{ github.workspace }}\_flutter\bin\flutter.bat build windows
 
       #      # Step 7: Upload Windows Artifact
       #      - name: Upload Windows Artifact
