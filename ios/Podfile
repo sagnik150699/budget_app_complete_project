@@ -4,6 +4,9 @@ platform :ios, '13.0'
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
+# Use a Firebase SDK version compatible with Xcode 14.
+$FirebaseSDKVersion = '11.12.0'
+
 project 'Runner', {
   'Debug' => :debug,
   'Profile' => :release,
