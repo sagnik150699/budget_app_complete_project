@@ -103,32 +103,26 @@ class ViewModel extends ChangeNotifier {
   }
 
   Future<void> signInWithGoogleMobile(BuildContext context) async {
-    try {
-      final GoogleSignIn signIn = GoogleSignIn.instance;
-      await signIn.initialize();
-      if (signIn.supportsAuthenticate()) {
-        await signIn.authenticate();
-      } else {
-        await signIn.signIn();
-      }
+    final GoogleSignInAccount? googleUser = await GoogleSignIn()
+        .signIn()
+        .onError((error, stackTrace) => DialogBox(
+            context, error.toString().replaceAll(RegExp('\\[.*?\\]'), '')));
 
-      final GoogleSignInAccount? googleUser = signIn.currentUser;
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
 
-      final credential = GoogleAuthProvider.credential(
-        idToken: googleAuth?.idToken,
-      );
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
 
-      await _auth.signInWithCredential(credential).then(
-        (value) async {
-          logger.e("Signed in successfully $value");
-        },
-      );
-    } catch (error) {
+    await _auth.signInWithCredential(credential).then(
+      (value) async {
+        logger.e("Signed in successfully $value");
+      },
+    ).onError((error, stackTrace) {
       logger.d(error);
-      DialogBox(context, error.toString().replaceAll(RegExp('\\[.*?\\]'), ''));
-    }
+    });
   }
 
   //Database
