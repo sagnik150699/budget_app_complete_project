@@ -17,6 +17,7 @@ class ViewModel extends ChangeNotifier {
   final _auth = FirebaseAuth.instance;
   List<Models> expenses = [];
   List<Models> incomes = [];
+  final GoogleSignIn _google = GoogleSignIn.instance;   // v 7+ singleton
 
 //  bool isSignedIn = false;
   bool isObscure = true;
@@ -87,40 +88,47 @@ class ViewModel extends ChangeNotifier {
     });
   }
 
+//--------------------------------------------------------------------
+  ///  GOOGLE-SIGN-IN  – WEB
+//--------------------------------------------------------------------
   Future<void> signInWithGoogleWeb(BuildContext context) async {
-    GoogleAuthProvider googleProvider = GoogleAuthProvider();
+    final googleProvider = GoogleAuthProvider();
 
-    await _auth.signInWithPopup(googleProvider).onError(
-          (error, stackTrace) => DialogBox(
-            context,
-            error.toString().replaceAll(RegExp('\\[.*?\\]'), ''),
-          ),
-        );
-    logger
-        .d(" Current user is not empty = ${_auth.currentUser!.uid.isNotEmpty}");
-
-    //YOUR_GOOGLE_SIGN_IN_OAUTH_CLIENT_ID
+    await _auth
+        .signInWithPopup(googleProvider)                       // Firebase Web flow
+        .then((_) => logger.d(
+      'Current user UID present? '
+          '${_auth.currentUser?.uid.isNotEmpty ?? false}',
+    ))
+        .onError((error, stackTrace) => DialogBox(
+      context,
+      error.toString().replaceAll(RegExp(r'\[.*?\]'), ''),
+    ));
   }
 
+//--------------------------------------------------------------------
+  ///  GOOGLE-SIGN-IN  – MOBILE  (Android / iOS)  – v 7 API
+//--------------------------------------------------------------------
   Future<void> signInWithGoogleMobile(BuildContext context) async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn()
-        .signIn()
-        .onError((error, stackTrace) => DialogBox(
-            context, error.toString().replaceAll(RegExp('\\[.*?\\]'), '')));
+    final GoogleSignInAccount account = await _google
+        .authenticate(scopeHint: const ['email'])              // replaces signIn()
+        .onError((error, stackTrace) {
+      DialogBox(
+        context,
+        error.toString().replaceAll(RegExp(r'\[.*?\]'), ''),
+      );
+      throw error!;
+    });
 
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
+    // authentication is now *synchronous* and returns only idToken
+    final String? idToken = account.authentication.idToken;
 
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
+    final credential = GoogleAuthProvider.credential(idToken: idToken);
 
     await _auth.signInWithCredential(credential).then(
-      (value) async {
-        logger.e("Signed in successfully $value");
-      },
+          (value) => logger.e('Signed in successfully $value'),
     ).onError((error, stackTrace) {
+      DialogBox(context, error.toString().replaceAll(RegExp(r'\[.*?\]'), ''));
       logger.d(error);
     });
   }

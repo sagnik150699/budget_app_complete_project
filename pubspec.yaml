@@ -11,26 +11,25 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  cupertino_icons: ^1.0.2
-  logger: ^2.0.2+1
-  cloud_firestore:
-  firebase_auth:
-  flutter_hooks:
-  hooks_riverpod:
-  google_fonts:
-  google_sign_in:
-  sign_button:
+  cupertino_icons: ^1.0.8
+  logger: ^2.6.0
+  cloud_firestore: ^5.6.11
+  firebase_auth: ^5.6.2
+  firebase_core: ^3.15.1
+  flutter_hooks: ^0.21.2
+  hooks_riverpod: ^2.6.1
+  google_fonts: ^6.2.1
+  google_sign_in: ^7.1.0
+  sign_button: ^2.0.6
   url_strategy: ^0.3.0
-  url_launcher:
-  flutter_svg:
+  url_launcher: ^6.3.1
+  flutter_svg: ^2.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
   flutter_lints: ^6.0.0
+
 
 
 flutter:
