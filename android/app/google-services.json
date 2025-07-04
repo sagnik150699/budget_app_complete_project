@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "357935783557",
     "project_id": "budget-app-89e2f",
-    "storage_bucket": "budget-app-89e2f.appspot.com"
+    "storage_bucket": "budget-app-89e2f.firebasestorage.app"
   },
   "client": [
     {
@@ -10,6 +10,42 @@
         "mobilesdk_app_id": "1:357935783557:android:06a46991b4c311247ed3ec",
         "android_client_info": {
           "package_name": "com.c"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357935783557:android:a5a24e2d3b45e5107ed3ec",
+        "android_client_info": {
+          "package_name": "com.codingliquids.budget_app_complete_project"
         }
       },
       "oauth_client": [
@@ -145,6 +181,42 @@
             "certificate_hash": "8a0c901f36b5c96e17c2bb859aed9f78b6e92598"
           }
         },
+        {
+          "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357935783557:android:c96ba4431788c0847ed3ec",
+        "android_client_info": {
+          "package_name": "com.tata.dash_start"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
           "client_type": 3

@@ -1,4 +1,4 @@
-# Complete Budget App
+# Complete Budget App by Sagnik Bhattacharya Udemy
 ## Instructions:
 1. Connect with your credentials of Firebase from the lecture "Connect Firebase to Flutter project using CLI"
 2. The app will show a blank screen, so code along with the video and finally your code will start working.
@@ -21,8 +21,6 @@ Android Studio or VS Code with Flutter plugins
 ## Acknowledgments
 A big shoutout to Coding Liquids for the insightful Flutter course that paved the way for this app. A deep dive into the world of Flutter, their course not only introduces the basics but ensures a complete and holistic understanding of the framework.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Contact
 Sagnik Bhattacharya - sagnikbhattacharya@codingliquids.com

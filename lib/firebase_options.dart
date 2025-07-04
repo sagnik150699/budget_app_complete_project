@@ -52,16 +52,16 @@ class DefaultFirebaseOptions {
     messagingSenderId: '357935783557',
     projectId: 'budget-app-89e2f',
     authDomain: 'budget-app-89e2f.firebaseapp.com',
-    storageBucket: 'budget-app-89e2f.appspot.com',
+    storageBucket: 'budget-app-89e2f.firebasestorage.app',
     measurementId: 'G-HCK4LYTZG4',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo',
-    appId: '1:357935783557:android:06a46991b4c311247ed3ec',
+    appId: '1:357935783557:android:a5a24e2d3b45e5107ed3ec',
     messagingSenderId: '357935783557',
     projectId: 'budget-app-89e2f',
-    storageBucket: 'budget-app-89e2f.appspot.com',
+    storageBucket: 'budget-app-89e2f.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -69,9 +69,10 @@ class DefaultFirebaseOptions {
     appId: '1:357935783557:ios:79d9361ba45c8cc47ed3ec',
     messagingSenderId: '357935783557',
     projectId: 'budget-app-89e2f',
-    storageBucket: 'budget-app-89e2f.appspot.com',
+    storageBucket: 'budget-app-89e2f.firebasestorage.app',
     androidClientId: '357935783557-0sv5mmkmf8fe9ntjbta5ubmihj4kgp51.apps.googleusercontent.com',
     iosClientId: '357935783557-u9mgds3stqeg2d6avih6he0mq0a8t1ik.apps.googleusercontent.com',
     iosBundleId: 'com.codingliquids.budgetAppCompleteProject',
   );
+
 }
