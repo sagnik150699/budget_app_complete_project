@@ -5,33 +5,6 @@ on:
     branches: ["**"]
 
 jobs:
-  build_windows:
-    name: Build Windows
-    runs-on: windows-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: Enable Git long paths
-        run: git config --system core.longpaths true
-      - name: Install Flutter
-        run: |
-          git clone https://github.com/flutter/flutter.git --depth 1 -b 3.32.5 _flutter
-      - name: Flutter Config
-        run: ${{ github.workspace }}\_flutter\bin\flutter.bat config --enable-windows-desktop
-      - name: Get Packages
-        run: ${{ github.workspace }}\_flutter\bin\flutter.bat pub get
-      - name: Build Windows Executable
-        run: ${{ github.workspace }}\_flutter\bin\flutter.bat build windows
-      - name: Upload Windows Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-app
-          path: build/windows/x64/runner/Release/**
 
   build_android:
     name: Build Android
