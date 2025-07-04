@@ -17,6 +17,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Enable Git long paths
+        run: git config --system core.longpaths true
       - name: Install Flutter
         run: |
           git clone https://github.com/flutter/flutter.git --depth 1 -b 3.32.5 _flutter
@@ -43,6 +45,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Enable Git long paths
+        run: git config --system core.longpaths true
       - name: Install Flutter
         run: |
           git clone https://github.com/flutter/flutter.git --depth 1 -b 3.32.5 _flutter
@@ -67,6 +71,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Enable Git long paths
+        run: git config --system core.longpaths true
       - name: Install Flutter
         run: |
           git clone https://github.com/flutter/flutter.git --depth 1 -b 3.32.5 _flutter
