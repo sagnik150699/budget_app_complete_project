@@ -9,9 +9,9 @@ import 'package:sign_button/sign_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Pacifico extends StatelessWidget {
-  final text;
-  final size;
-  final color;
+  final String text;
+  final double size;
+  final Color? color;
   //final fontWeight;
   const Pacifico({
     Key? key,
@@ -24,7 +24,7 @@ class Pacifico extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text.toString(),
+      text,
       style: GoogleFonts.pacifico(
         fontSize: size,
         color: color == null ? Colors.black : color,
@@ -35,22 +35,22 @@ class Pacifico extends StatelessWidget {
 }
 
 class OpenSans extends StatelessWidget {
-  final text;
-  final size;
-  final color;
-  final fontWeight;
-  const OpenSans(
-      {Key? key,
-      required this.text,
-      required this.size,
-      this.color,
-      this.fontWeight})
-      : super(key: key);
+  final String text;
+  final double size;
+  final Color? color;
+  final FontWeight? fontWeight;
+  const OpenSans({
+    Key? key,
+    required this.text,
+    required this.size,
+    this.color,
+    this.fontWeight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text.toString(),
+      text,
       style: GoogleFonts.openSans(
         fontSize: size,
         color: color == null ? Colors.black : color,
@@ -61,22 +61,22 @@ class OpenSans extends StatelessWidget {
 }
 
 class Poppins extends StatelessWidget {
-  final text;
-  final size;
-  final color;
-  final fontWeight;
-  const Poppins(
-      {Key? key,
-      required this.text,
-      required this.size,
-      this.color,
-      this.fontWeight})
-      : super(key: key);
+  final String text;
+  final double size;
+  final Color? color;
+  final FontWeight? fontWeight;
+  const Poppins({
+    Key? key,
+    required this.text,
+    required this.size,
+    this.color,
+    this.fontWeight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text.toString(),
+      text,
       style: GoogleFonts.poppins(
         fontSize: size,
         color: color == null ? Colors.black : color,
@@ -86,8 +86,8 @@ class Poppins extends StatelessWidget {
   }
 }
 
-DialogBox(BuildContext context, String title) {
-  return showDialog(
+Future<void> DialogBox(BuildContext context, String title) {
+  return showDialog<void>(
     context: context,
     builder: (BuildContext context) => AlertDialog(
       actionsAlignment: MainAxisAlignment.center,
@@ -120,8 +120,8 @@ DialogBox(BuildContext context, String title) {
 }
 
 class IncomeExpenseRow extends StatelessWidget {
-  final text;
-  final amount;
+  final String text;
+  final String amount;
 
   const IncomeExpenseRow({
     Key? key,
@@ -153,8 +153,8 @@ class IncomeExpenseRow extends StatelessWidget {
 }
 
 class IncomeExpenseRowMobile extends StatelessWidget {
-  final text;
-  final amount;
+  final String text;
+  final String amount;
 
   const IncomeExpenseRowMobile({
     Key? key,
@@ -186,12 +186,12 @@ class IncomeExpenseRowMobile extends StatelessWidget {
 }
 
 class TextForm extends StatelessWidget {
-  final text;
-  final containerWidth;
-  final hintText;
-  final controller;
-  final digitsOnly;
-  final validator;
+  final String text;
+  final double containerWidth;
+  final String hintText;
+  final TextEditingController controller;
+  final bool? digitsOnly;
+  final String? Function(String?)? validator;
 
   const TextForm({
     Key? key,
@@ -544,7 +544,7 @@ class AddIncome extends HookConsumerWidget {
 }
 
 class TotalCalculation extends HookConsumerWidget {
-  final size;
+  final double size;
   TotalCalculation(this.size);
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -24,7 +24,7 @@ class ViewModel extends ChangeNotifier {
   int totalExpense = 0;
   int totalIncome = 0;
   int budgetLeft = 0;
-  var logger = Logger();
+  final Logger logger = Logger();
   CollectionReference userCollection =
       FirebaseFirestore.instance.collection('users');
   Stream<User?> get authStateChange => _auth.authStateChanges();
