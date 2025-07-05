@@ -86,7 +86,7 @@ class Poppins extends StatelessWidget {
   }
 }
 
-Future<void> DialogBox(BuildContext context, String title) {
+ DialogBox(BuildContext context, String title) {
   return showDialog<void>(
     context: context,
     builder: (BuildContext context) => AlertDialog(
@@ -191,7 +191,7 @@ class TextForm extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool? digitsOnly;
-  final String? Function(String?)? validator;
+  final  validator;
 
   const TextForm({
     Key? key,
@@ -454,7 +454,8 @@ class DrawerExpense extends HookConsumerWidget {
                     Uri.parse("https://www.instagram.com/tomcruise")),
                 icon: SvgPicture.asset(
                   "assets/instagram.svg",
-                  color: Colors.black,
+                  colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn,),
+                 // color: Colors.black,
                   width: 35.0,
                 ),
               ),
@@ -463,7 +464,7 @@ class DrawerExpense extends HookConsumerWidget {
                     Uri.parse("https://www.twitter.com/tomcruise")),
                 icon: SvgPicture.asset(
                   "assets/twitter.svg",
-                  color: Colors.black,
+                  colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn,),
                   width: 35.0,
                 ),
               ),
