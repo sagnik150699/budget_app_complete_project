@@ -7,6 +7,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:357935783557:android:62944e79ccf5a06d7ed3ec",
+        "android_client_info": {
+          "package_name": "com.codingliquids.budgetAppComplete_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357935783557-b9qkepubpel7cl4665ue7gc8g4ajlkii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingliquids.budgetAppComplete_project",
+            "certificate_hash": "55fe82b5748b2be4799a9989a8a80d52ca92b45a"
+          }
+        },
+        {
+          "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWyC55ovaveulxwQDNBNggQhCskNE-oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357935783557-1376sq2pftj6slgsqen29sk4udvt4pt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357935783557-bjg7bnvfa1lcolcob3bovf1su4pdd30j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paulinaknop.budgetAppStarting"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:357935783557:android:d22ce2be1d8648607ed3ec",
         "android_client_info": {
           "package_name": "com.codingliquids.money_control"
