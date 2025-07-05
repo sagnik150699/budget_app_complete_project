@@ -17,7 +17,7 @@ class ViewModel extends ChangeNotifier {
   final _auth = FirebaseAuth.instance;
   List<Models> expenses = [];
   List<Models> incomes = [];
-  final GoogleSignIn _google = GoogleSignIn.instance;   // v 7+ singleton
+  final GoogleSignIn _google = GoogleSignIn.instance; // v 7+ singleton
 
 //  bool isSignedIn = false;
   bool isObscure = true;
@@ -27,7 +27,9 @@ class ViewModel extends ChangeNotifier {
   final Logger logger = Logger();
   CollectionReference userCollection =
       FirebaseFirestore.instance.collection('users');
+
   Stream<User?> get authStateChange => _auth.authStateChanges();
+
 //Check if Signed In
 //   Future<void> isLoggedIn() async {
 //     await _auth.authStateChanges().listen((User? user) {
@@ -95,15 +97,21 @@ class ViewModel extends ChangeNotifier {
     final googleProvider = GoogleAuthProvider();
 
     await _auth
-        .signInWithPopup(googleProvider)                       // Firebase Web flow
-        .then((_) => logger.d(
-      'Current user UID present? '
-          '${_auth.currentUser?.uid.isNotEmpty ?? false}',
-    ))
-        .onError((error, stackTrace) => DialogBox(
-      context,
-      error.toString().replaceAll(RegExp(r'\[.*?\]'), ''),
-    ));
+        .signInWithPopup(googleProvider) // Firebase Web flow
+        .then(
+          (_) => logger.d(
+            'Current user UID present? '
+            '${_auth.currentUser?.uid.isNotEmpty ?? false}',
+          ),
+        )
+        .onError(
+          (error, stackTrace)
+          {   logger.d(error);
+              return DialogBox(
+                context,
+                error.toString().replaceAll(RegExp(r'\[.*?\]'), ''),
+              );
+            });
   }
 
 //--------------------------------------------------------------------
@@ -111,8 +119,9 @@ class ViewModel extends ChangeNotifier {
 //--------------------------------------------------------------------
   Future<void> signInWithGoogleMobile(BuildContext context) async {
     final GoogleSignInAccount account = await _google
-        .authenticate(scopeHint: const ['email'])              // replaces signIn()
+        .authenticate(scopeHint: const ['email']) // replaces signIn()
         .onError((error, stackTrace) {
+      logger.d(error);
       DialogBox(
         context,
         error.toString().replaceAll(RegExp(r'\[.*?\]'), ''),
@@ -125,9 +134,12 @@ class ViewModel extends ChangeNotifier {
 
     final credential = GoogleAuthProvider.credential(idToken: idToken);
 
-    await _auth.signInWithCredential(credential).then(
+    await _auth
+        .signInWithCredential(credential)
+        .then(
           (value) => logger.e('Signed in successfully $value'),
-    ).onError((error, stackTrace) {
+        )
+        .onError((error, stackTrace) {
       DialogBox(context, error.toString().replaceAll(RegExp(r'\[.*?\]'), ''));
       logger.d(error);
     });
