@@ -12,12 +12,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     setPathUrlStrategy();
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  } else {
-    await Firebase.initializeApp( options: DefaultFirebaseOptions.currentPlatform,);
   }
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   // Initialise Google-Sign-In once, up-front
   await GoogleSignIn.instance.initialize();
   runApp(
