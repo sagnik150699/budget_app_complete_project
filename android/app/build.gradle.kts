@@ -11,8 +11,7 @@ plugins {
 android {
     namespace = "com.codingliquids.budget_app_complete_project"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"
-
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
