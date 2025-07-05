@@ -1,13 +1,16 @@
-# Podfile — Flutter + iOS 13 (ASCII quotes only)
+# Podfile — Flutter + iOS 13
 
 platform :ios, '13.0'
 
-# ----------  BOOTSTRAP FLUTTER HELPERS  ----------
-flutter_root = File.expand_path(File.join(__dir__, '..', '..'))
-require File.expand_path(File.join(
-  'packages', 'flutter_tools', 'bin', 'podhelper'
-), flutter_root)
-# -----------------------------------------------
+#################  Bootstrap Flutter helpers  #################
+flutter_root = ENV['FLUTTER_ROOT']
+raise 'FLUTTER_ROOT is not set!' unless flutter_root && File.directory?(flutter_root)
+
+require File.expand_path(
+  File.join('packages', 'flutter_tools', 'bin', 'podhelper'),
+  flutter_root
+)
+################################################################
 
 flutter_ios_podfile_setup
 
