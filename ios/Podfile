@@ -1,30 +1,27 @@
+# Podfile — Flutter + iOS 13 (ASCII quotes only)
+
 platform :ios, '13.0'
 
-# Disable CocoaPods analytics (keeps CI slightly faster)
-ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+# ----------  BOOTSTRAP FLUTTER HELPERS  ----------
+flutter_root = File.expand_path(File.join(__dir__, '..', '..'))
+require File.expand_path(File.join(
+  'packages', 'flutter_tools', 'bin', 'podhelper'
+), flutter_root)
+# -----------------------------------------------
 
-#################################################################
-# This pulls in Flutter’s podhelper.rb and defines the helpers. #
-#################################################################
 flutter_ios_podfile_setup
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  ###############################################################
-  # ↓ This installs every plugin listed in pubspec.yaml.        #
-  ###############################################################
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
 post_install do |installer|
-  ################################################################
-  # Standard Flutter post-install tweaks (bitcode, architectures)
-  ################################################################
   flutter_additional_ios_build_settings(installer)
 
-  # --- our extra line: force EVERY target to iOS 13 ------------
+  # Force every native target to iOS 13
   installer.pods_project.targets.each do |t|
     t.build_configurations.each do |c|
       c.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
