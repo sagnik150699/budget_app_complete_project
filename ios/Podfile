@@ -1,0 +1,33 @@
+# Podfile — Flutter + iOS 13
+
+platform :ios, '13.0'
+
+#################  Bootstrap Flutter helpers  #################
+flutter_root = ENV['FLUTTER_ROOT']
+raise 'FLUTTER_ROOT is not set!' unless flutter_root && File.directory?(flutter_root)
+
+require File.expand_path(
+  File.join('packages', 'flutter_tools', 'bin', 'podhelper'),
+  flutter_root
+)
+################################################################
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  flutter_additional_ios_build_settings(installer)
+
+  # Force every native target to iOS 13
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |c|
+      c.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+    end
+  end
+end
