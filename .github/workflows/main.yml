@@ -58,46 +58,21 @@ jobs:
           name: web-app
           path: build/web/
 
-  build_ios:
-    name: Build iOS
-    runs-on: macos-latest
-
-    steps:
-      # 1️⃣  Checkout your code
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # 2️⃣  Java (needed for Android tooling even on macOS)
-      - name: Set up JDK 17
-        uses: actions/setup-java@v1
-        with:
-          java-version: '17.x'
-
-      # 3️⃣  Install the requested Flutter SDK
-      - name: Install Flutter
-        uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '3.32.5'
-
-      # 4️⃣  Fetch pub packages
-      - name: Get Packages
-        run: flutter pub get
-
-      # 5️⃣  Build iOS — with a 60-second keep-alive echo so the
-      #      runner never hits the “idle-timeout” during pod install.
-      - name: Build iOS (keep-alive)
-        shell: bash
-        run: |
-          # ⏳  emit a heartbeat every 60 s
-          while true; do
-            echo "⏳  still building … $(date)"
-            sleep 60
-          done &
-          KEEPALIVE_PID=$!
-  
-          # your original build command
-          flutter build ios --no-codesign
-  
-          # stop the heartbeat loop
-          kill "$KEEPALIVE_PID"
-
+#  build_ios:
+#    name: Build iOS
+#    runs-on: macos-latest
+#    steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: "17.x"
+#      - name: Install Flutter
+#        uses: subosito/flutter-action@v1
+#        with:
+#          flutter-version: '3.32.5'
+#      - name: Get Packages
+#        run: flutter pub get
+#      - name: Build iOS
+#        run: flutter build ios --no-codesign
