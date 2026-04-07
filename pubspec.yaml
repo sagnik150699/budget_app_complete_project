@@ -18,7 +18,7 @@ dependencies:
   firebase_core: ^3.15.1
   flutter_hooks: ^0.21.2
   hooks_riverpod: ^2.6.1
-  google_fonts: ^6.2.1
+  google_fonts: ^8.0.2
   google_sign_in: ^7.1.0
   sign_button: ^2.0.6
   url_strategy: ^0.3.0
