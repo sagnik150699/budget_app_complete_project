@@ -4,6 +4,13 @@
 Website: [sagnikbhattacharya.com](https://sagnikbhattacharya.com)
 
 # Complete Budget App by Sagnik Bhattacharya Udemy
+
+## Course
+
+This project is part of **The Complete Flutter Course: Build Android, iOS, and Web apps**.
+
+[View the course on Coding Liquids](https://www.codingliquids.com/courses/Flutter-Course-Learn-to-Build-Android-iOS-and-Web-apps-637b978ee4b08f9aaa22d2cb)
+
 ## Instructions:
 1. Connect with your credentials of Firebase from the lecture "Connect Firebase to Flutter project using CLI"
 2. The app will show a blank screen, so code along with the video and finally your code will start working.
